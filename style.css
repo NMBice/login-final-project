@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/*
+
+Based on Olga Vajagić's design - https://KAI PLAY TOY shop-Identity
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  margin: 0 3rem;
+  overflow-x: hidden;
+  background-color:#FFFF99;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 3rem;
+  background-color: transparent;
+}
+body::-webkit-scrollbar {
+  width: 1rem;
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: #EBB87D;
+}
+
+header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  color: #EBB87D;
+  text-align: center;
+}
+header .logo {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 100%;
+  border: 0.35rem solid #EBB87D;
+  margin: 5rem 0 3rem 0;
+}
+header .logo_main {
+  font-family: "Montagu Slab", serif;
+  font-size: 3.325rem;
+}
+header .logo_sub {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 0.25rem;
+}
+header .daily_menu {
+  width: 18rem;
+  font-family: "Montagu Slab", serif;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 3.5rem;
+}
+header .date {
+  font-family: "Open Sans", sans-serif;
+  margin: 2rem 0 3rem 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: -0.025rem;
+}
+
+ol.cards {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: space-between;
+  justify-content: center;
+  width: 100%;
+  max-height: 100vh;
+  background: #fff;
+  font-family: "Open Sans", sans-serif;
+  color: #32462C;
+  list-style: none;
+  background-color:#FFFF99;
+  counter-reset: num;
+}
+ol.cards li.cards_item {
+  position: relative;
+  background-color:#FFFF99;
+}
+ol.cards li.cards_item:before {
+  position: absolute;
+  top: 2.5rem;
+  left: 45%;
+  z-index: 2;
+  content: "0" counter(num);
+  counter-increment: num;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.15rem solid #32462C;
+  font-family: "Montagu Slab", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+  background-color:#FFFF99;
+}
+
+.card {
+  position: relative;
+  padding: 0 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+.card_image {
+  margin: 1rem;
+}
+.card_image img {
+  object-fit: cover;
+  object-position: 50% 60%;
+  border-radius: 3rem;
+  width: 20rem;
+  max-height: 12.7rem;
+}
+.card_content {
+  width: 25rem;
+  padding: 0.5rem 0 1rem 0;
+  border-radius: 3rem;
+  background: #EBB87D;
+}
+.card_content .customizations li {
+  display: inline;
+  padding: 0.5rem;
+}
+.card_content .customizations li:before {
+  content: "￭";
+  margin-right: 1rem;
+}
+.card_title {
+  position: relative;
+  padding: 5rem 0 1rem 0;
+  margin: 1rem auto;
+  font-family: "Montagu Slab", serif;
+  font-weight: 700;
+  letter-spacing: -0.05rem;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+.card_text {
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.card_text .expand {
+  margin: 1rem auto;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.card_text p {
+  padding: 0.5rem;
+}
+.card_text .note {
+  position: absolute;
+  top: 13.75rem;
+  left: 9.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 3rem;
+  font-family: "Montagu Slab", serif;
+  font-size: 1.5rem;
+  color: #EBB87D;
+  background: #32462C;
+}
+.card_price {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 1rem auto;
+  font-family: "Montagu Slab", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 5rem;
+  background: #32462C;
+  color: #EBB87D;
+}
+.card_price span.dollar {
+  font-size: 1rem;
+  line-height: 0.5rem;
+  margin-right: 0.15rem;
+}
+
+#description {
+  position: relative;
+  overflow: hidden;
+}
+
+.zero-height {
+  height: 0;
+}
+
+@media (max-height: 500px) {
+  body {
+    transform: scale(0.65) translateY(-30%);
+
+  }
+}
